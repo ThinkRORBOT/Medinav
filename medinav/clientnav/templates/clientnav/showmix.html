@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> Mix page </title>
+<style>
+Body {
+  font-family: Calibri, Helvetica, sans-serif;
+  background-color: aqua;
+}
+button {
+       background-color: white;
+       width: 100%;
+        color: black;
+        padding: 15px;
+        margin: 10px 0px;
+        border: none;
+        cursor: pointer;
+         }
+ form {
+        border: 3px solid #f1f1f1;
+    }
+ input[type=text], input[type=password] {
+        width: 100%;
+        margin: 8px 0;
+        padding: 12px 20px;
+        display: inline-block;
+        border: 2px solid aqua;
+        box-sizing: border-box;
+    }
+ button:hover {
+        opacity: 0.7;
+    }
+
+    select{
+      width: 100%;
+      font-size: 30px;
+      text-align: center;
+    }
+
+ .container {
+        padding: 25px;
+        background-color: lightblue;
+    }
+  footer{
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+  }
+</style>
+</head>
+<body>
+    <center> <h1> Phama Mapping Show Mix </h1> </center>
+        <div class="container">
+          <!--This should also get the data form the database-->
+          <h2>Drug 1</h2>
+          <br>
+          <hr>
+          <br>
+          <h3>Ingrediants Needed:</h3>
+          <hr>
+          <select name="Ingrediants" size="3">
+            <!-- This will be loaded from db in reality-->
+            <option value="Ingrediant 1">Ingrediant 1 | Quantity | Notes</option>
+            <option value="Ingrediant 2">Ingrediant 2 | Quantity | Note</option>
+            <option value="Ingrediant 3"> Ingrediant 3 | Quantity | Notes</option>
+          </select>
+          <button>Select</button>
+          <button>Return</button>
+          <!--Lights should bel it up now-->
+
+        </div>
+    <hr>
+    <button>Back</button>
+</body>
+
+<footer>
+  Pharma Mapping MedNav
+</footer>
+</html>
