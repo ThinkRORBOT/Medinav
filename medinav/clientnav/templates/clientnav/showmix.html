@@ -1,52 +1,16 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
+    {% load static %}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title> Mix page </title>
+<link rel="stylesheet" type="text/css" href="{% static 'css/default.css' %}">
 <style>
-Body {
-  font-family: Calibri, Helvetica, sans-serif;
-  background-color: aqua;
-}
-button {
-       background-color: white;
-       width: 100%;
-        color: black;
-        padding: 15px;
-        margin: 10px 0px;
-        border: none;
-        cursor: pointer;
-         }
- form {
-        border: 3px solid #f1f1f1;
-    }
- input[type=text], input[type=password] {
-        width: 100%;
-        margin: 8px 0;
-        padding: 12px 20px;
-        display: inline-block;
-        border: 2px solid aqua;
-        box-sizing: border-box;
-    }
- button:hover {
-        opacity: 0.7;
-    }
-
-    select{
+  select{
       width: 100%;
       font-size: 30px;
       text-align: center;
     }
-
- .container {
-        padding: 25px;
-        background-color: lightblue;
-    }
-  footer{
-    width: 100%;
-    bottom: 0;
-    position: absolute;
-  }
 </style>
 </head>
 <body>

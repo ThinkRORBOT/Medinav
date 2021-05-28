@@ -17,7 +17,8 @@ class ingrediantList(models.Model):
     location = models.IntegerField(default = '0')
     required = models.CharField(max_length = 2, default = 'F')
     concentration = models.CharField(max_length=20, default='')
-    
+
+# external reference to d_id and i_id
 class drugIngrediant(models.Model):
     i_id = models.IntegerField(default = '0')
     d_id = models.IntegerField(default = '0')

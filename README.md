@@ -14,7 +14,7 @@ GUI for the Pharma Mapping Project
 - login page
 - forgot password feature
 - connect site to esp32
-- common css file for themes once django is setup
+- ~~common css file for themes once django is setup~~
 - create UI to allow creation of new medicine and users
 
 ## Dependancies
