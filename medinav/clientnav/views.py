@@ -47,4 +47,11 @@ def get_selectmix(request):
     return render(request, 'clientnav/selectmix.html', data)
 
 def get_showmix(request):
-    return render(request, 'clientnav/showmix.html')
+    showmix = drugIngrediant.objects.filter(d_id=request.session['drug_id'])
+    if showmix.count() == 0:
+        print("show an error page here")
+    print(showmix)
+    data = {
+        "drugIngrediants": showmix
+    }
+    return render(request, 'clientnav/showmix.html', data)

@@ -25,9 +25,16 @@
           <hr>
           <select name="Ingrediants" size="3">
             <!-- This will be loaded from db in reality-->
+            {% for item in drugIngrediants %}
+            <option>{{ item.i_id }} | {{ item.amount }} | {{ item.units }}</option>
+            {% empty %}
+            <p>cannot retrieve data from db</p>
+            {% endfor %}
+            <!--
             <option value="Ingrediant 1">Ingrediant 1 | Quantity | Notes</option>
             <option value="Ingrediant 2">Ingrediant 2 | Quantity | Note</option>
             <option value="Ingrediant 3"> Ingrediant 3 | Quantity | Notes</option>
+            -->
           </select>
           <!--Select drug to get-->
           <button>Select</button>
