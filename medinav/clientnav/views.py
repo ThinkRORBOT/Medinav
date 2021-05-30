@@ -31,7 +31,15 @@ def get_index(request):
 def get_help(request):
     return render(request, 'clientnav/help.html')
 
+@csrf_exempt
 def get_selectmix(request):
+    if request.method == 'POST':
+        response_dict = request.POST.dict()
+        drug_id = response_dict['drug_id']
+        request.session['drug_id'] = drug_id
+        if (True):
+            # maybe test for something later on like if it's available
+            return JsonResponse({'status':'200'})
     selectmix = mixedDrugs.objects.all()
     data = {
         "mixedDrugs": selectmix

@@ -16,6 +16,7 @@ GUI for the Pharma Mapping Project
 - connect site to esp32
 - ~~common css file for themes once django is setup~~
 - create UI to allow creation of new medicine and users
+- enable CSRF if there is enough time
 
 ## Dependancies
  - Django

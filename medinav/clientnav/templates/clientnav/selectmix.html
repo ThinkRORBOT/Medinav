@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title> Select Mix </title>
 <link rel="stylesheet" type="text/css" href="{% static 'css/default.css' %}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{% static 'js/selectmix.js' %}"></script>
 <style>
   select{
     width: 100%;
@@ -16,7 +18,7 @@
 <body>
   <center> <h1> MedNav </h1> </center>
   <a href="/clientnav/help">help</a>
-    <select name="Drugs" size="3">
+    <select name="Drugs" size="3" id="selectdrug">
       <!-- This will be loaded from db in reality-->
       <!--<option value="Drug 1">Drug 1 | Description | Available</option>
       <option value="Drug 2">Drug 2 | Description | Available</option>
@@ -29,7 +31,7 @@
       {% endfor %}
     </select>
     
-    <a href="/clientnav/showmix"><button>Select</button></a>
+    <button id="select_button">Select</button>
     <a href="/clientnav/index"><button>Log out</button></a>
 </body>
 
