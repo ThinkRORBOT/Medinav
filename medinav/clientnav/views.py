@@ -32,7 +32,11 @@ def get_help(request):
     return render(request, 'clientnav/help.html')
 
 def get_selectmix(request):
-    return render(request, 'clientnav/selectmix.html')
+    selectmix = mixedDrugs.objects.all()
+    data = {
+        "mixedDrugs": selectmix
+    }
+    return render(request, 'clientnav/selectmix.html', data)
 
 def get_showmix(request):
     return render(request, 'clientnav/showmix.html')

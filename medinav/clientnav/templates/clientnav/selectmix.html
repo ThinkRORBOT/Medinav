@@ -15,13 +15,20 @@
 </head>
 <body>
   <center> <h1> MedNav </h1> </center>
-  <a href="clientnav/help">help</a>
+  <a href="/clientnav/help">help</a>
     <select name="Drugs" size="3">
       <!-- This will be loaded from db in reality-->
-      <option value="Drug 1">Drug 1 | Description | Available</option>
+      <!--<option value="Drug 1">Drug 1 | Description | Available</option>
       <option value="Drug 2">Drug 2 | Description | Available</option>
       <option value="Drug 3"> Drug 3 | Descrition | Available</option>
+      -->
+      {% for item in mixedDrugs %}
+      <option>{{ item.d_id }} | {{ item.d_name }}</option>
+      {% empty %}
+      <p>cannot retrieve data from db</p>
+      {% endfor %}
     </select>
+    
     <a href="/clientnav/showmix"><button>Select</button></a>
     <a href="/clientnav/index"><button>Log out</button></a>
 </body>
