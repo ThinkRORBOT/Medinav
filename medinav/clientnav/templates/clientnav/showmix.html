@@ -26,9 +26,14 @@
           <select name="Ingrediants" size="3">
             <!-- This will be loaded from db in reality-->
             {% for item in drugIngrediants %}
-            <option>{{ item.i_id }} | {{ item.amount }} | {{ item.units }}</option>
+            
+            {% for ingrediant in ingrediantList %}
+            {% if ingrediant.i_id == item.i_id %}
+            <option>{{ item.i_id }} | {{ item.amount }} | {{ item.units }} | {{ ingrediant.i_name }}</option>
+            {% endif %}
             {% empty %}
             <p>cannot retrieve data from db</p>
+            {% endfor %}
             {% endfor %}
             <!--
             <option value="Ingrediant 1">Ingrediant 1 | Quantity | Notes</option>

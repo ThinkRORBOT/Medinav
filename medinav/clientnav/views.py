@@ -7,6 +7,10 @@ import logging
 
 logger = logging.getLogger(__name__)
 # Create your views here.
+
+def reset_pwd(request):
+    return render(request, 'clientnav/forgotpwd.html')
+
 @csrf_exempt
 def index(request):
     if request.method == 'POST':
@@ -42,7 +46,7 @@ def get_selectmix(request):
             return JsonResponse({'status':'200'})
     selectmix = mixedDrugs.objects.all()
     data = {
-        "mixedDrugs": selectmix
+        "mixedDrugs": selectmix,
     }
     return render(request, 'clientnav/selectmix.html', data)
 
@@ -51,7 +55,9 @@ def get_showmix(request):
     if showmix.count() == 0:
         print("show an error page here")
     print(showmix)
+    ingrediantlist = ingrediantList.objects.all()
     data = {
-        "drugIngrediants": showmix
+        "drugIngrediants": showmix,
+        "ingrediantList": ingrediantlist
     }
     return render(request, 'clientnav/showmix.html', data)

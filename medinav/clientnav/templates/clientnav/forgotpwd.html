@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  {% load static %}
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> Password Reset </title>
+<link rel="stylesheet" type="text/css" href="{% static 'css/default.css' %}">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{% static 'js/index.js' %}"></script>
+</head>
+<body>
+    <center> <h1> Medinav Password Reset </h1> </center>
+    <form>
+        <div class="container">
+            <label>Username : </label>
+            <input id="username" type="text" placeholder="Enter Username" name="username">
+            <label>Password : </label>
+            <input id="password" type="password" placeholder="Enter new password" name="password">
+
+            <button type="button" id="reset_button">Reset</button>
+
+        </div>
+    </form>
+</body>
+
+<footer>
+  Pharma Mapping
+</footer>
+</html> 
