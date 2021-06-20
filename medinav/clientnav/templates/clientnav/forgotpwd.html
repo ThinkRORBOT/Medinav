@@ -7,7 +7,10 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/default.css' %}">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="{% static 'js/index.js' %}"></script>
+<script src="{% static 'js/forgotpwd.js' %}"></script>
+<header id="header">
+  <img src="{% static 'media/logo-nobackground-1000.png' %}" width="15%">
+</header>
 </head>
 <body>
     <center> <h1> Medinav Password Reset </h1> </center>
@@ -18,10 +21,12 @@
             <label>Password : </label>
             <input id="password" type="password" placeholder="Enter new password" name="password">
 
-            <button type="button" id="reset_button">Reset</button>
-
-        </div>
+            <button type="button" id="submit_button">Reset</button>
+            
+            </div>
     </form>
+    
+    <a href="/clientnav/index"><button>Return</button></a>
 </body>
 
 <footer>

@@ -8,7 +8,26 @@ import logging
 logger = logging.getLogger(__name__)
 # Create your views here.
 
+@csrf_exempt
 def reset_pwd(request):
+    if request.method == 'POST':
+        response_dict = request.POST.dict()
+        password = response_dict['pwd']
+        username = response_dict['u_name']        
+        
+        usr_credentials = usrCredentials()
+        status = usrCredentials.objects.filter(u_name=username).update(u_pwd=password)
+        print(status)
+
+        usr_credentials.save()        
+        
+        usr_credentials = usrCredentials()
+        # status = 1 if successful, 0 if username not found
+        if (status == 1):
+            return JsonResponse({'status':'200'})
+        elif (status == 0):
+            return JsonResponse({'status':'401'})
+        
     return render(request, 'clientnav/forgotpwd.html')
 
 @csrf_exempt

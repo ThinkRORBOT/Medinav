@@ -1,3 +1,8 @@
+head {
+    background-image: url(../../static/media/logo-nobackground-1000.jpg);
+}
+
+
 Body {
   font-family: Calibri, Helvetica, sans-serif;
   background-color: aqua;
