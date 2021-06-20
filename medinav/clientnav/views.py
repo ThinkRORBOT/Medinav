@@ -69,13 +69,34 @@ def get_selectmix(request):
     }
     return render(request, 'clientnav/selectmix.html', data)
 
+@csrf_exempt
 def get_showmix(request):
     showmix = drugIngrediant.objects.filter(d_id=request.session['drug_id'])
+    drug_name = mixedDrugs.objects.filter(d_id = request.session['drug_id'])[0].d_name
+    if request.method == 'POST':
+        response_dict = request.POST.dict()
+        action = response_dict['action']
+        
+        # response of 1 = return, 0 = reset
+        print(showmix)
+        
+        for item in showmix:
+            item_id = item.i_id
+            status = 0
+            if (action == '1'):
+                status = ingrediantList.objects.filter(i_id=item_id).update(required='T')
+            elif (action == '0'):
+                status = ingrediantList.objects.filter(i_id=item_id).update(required='F')
+            if (status == 0):
+                return JsonResponse({'status':'401'})
+        return JsonResponse({'status':'200'})
+
     if showmix.count() == 0:
         print("show an error page here")
     print(showmix)
     ingrediantlist = ingrediantList.objects.all()
     data = {
+        "drug_name": drug_name,
         "drugIngrediants": showmix,
         "ingrediantList": ingrediantlist
     }

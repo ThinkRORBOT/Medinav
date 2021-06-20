@@ -7,6 +7,9 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/default.css' %}">
 <header id="header">
   <img src="{% static 'media/logo-nobackground-1000.png' %}" width="15%">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{% static 'js/showmix.js' %}"></script>
+
 </header>
 <style>
   select{
@@ -20,19 +23,18 @@
     <center> <h1> Phama Mapping Show Mix </h1> </center>
         <div class="container">
           <!--This should also get the data form the database-->
-          <h2>Drug 1</h2>
+          <h2>{{ drug_name }}</h2>
           <br>
           <hr>
           <br>
           <h3>Ingrediants Needed:</h3>
           <hr>
-          <select name="Ingrediants" size="3">
-            <!-- This will be loaded from db in reality-->
+          <select id="Ingrediants" size="3">
             {% for item in drugIngrediants %}
             
             {% for ingrediant in ingrediantList %}
             {% if ingrediant.i_id == item.i_id %}
-            <option>{{ item.i_id }} | {{ item.amount }} | {{ item.units }} | {{ ingrediant.i_name }}</option>
+            <option id={{ item.i_id }}>{{ item.i_id }} | {{ item.amount }} | {{ item.units }} | {{ ingrediant.i_name }}</option>
             {% endif %}
             {% empty %}
             <p>cannot retrieve data from db</p>
@@ -45,8 +47,8 @@
             -->
           </select>
           <!--Select drug to get-->
-          <button>Select</button>
-          <button>Return</button>
+          <button type="button" id="select_button">Select/Return</button>
+          <button type="button" id="reset_button">Collected</button>
           <!--Lights should bel it up now-->
 
         </div>
