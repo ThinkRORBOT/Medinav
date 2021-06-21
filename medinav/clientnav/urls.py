@@ -12,5 +12,6 @@ urlpatterns = [
     path('selectmix/', views.get_selectmix, name='selectmix'),
     path('showmix/', views.get_showmix, name='showmix'),
     path('forgotpwd/', views.reset_pwd, name='forgotpwd'),
+    path('createuser/', views.create_user, name='createuser'),
 ]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

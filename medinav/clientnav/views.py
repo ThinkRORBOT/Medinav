@@ -31,6 +31,23 @@ def reset_pwd(request):
     return render(request, 'clientnav/forgotpwd.html')
 
 @csrf_exempt
+def create_user(request):
+    if request.method == 'POST':
+        response_dict = request.POST.dict()
+        password = response_dict['pwd']
+        username = response_dict['u_name']        
+
+        length = usrCredentials.objects.filter(u_name=username).count()
+        # status = 1 if successful, 0 if username not found
+        if (length == 1):
+            return JsonResponse({'status':'401'})
+        elif (length == 0):
+            usr_credentials = usrCredentials(u_name=username, u_pwd = password)
+            usr_credentials.save()
+            return JsonResponse({'status':'200'})
+    return render(request, 'clientnav/createuser.html')
+
+@csrf_exempt
 def index(request):
     if request.method == 'POST':
         response_dict = request.POST.dict()

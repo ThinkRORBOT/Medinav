@@ -9,11 +9,12 @@ GUI for the Pharma Mapping Project
 - ~~set up django project~~
 - ~~Do readme~~
 - ~~start repository on github~~
-- combine drugIngrediant and ingrediantList db in showmix view
+- ~~combine drugIngrediant and ingrediantList db in showmix view~~
+- ~~change db when select is clicked~~
 - create css/html GUI
 - ~~connect site to database~~
 - ~~login page~~
-- forgot password feature
+- ~~forgot password feature~~
 - connect site to esp32
 - ~~common css file for themes once django is setup~~
 - create UI to allow creation of new medicine and users
