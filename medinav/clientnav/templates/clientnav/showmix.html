@@ -24,11 +24,13 @@
         <div class="container">
           <!--This should also get the data form the database-->
           <h2>{{ drug_name }}</h2>
+          <p>Please press the ingredients to be obtained and press select. Proceed to retrieve the ingredient/s from the fridge and press collected when done. Repeat the process when returning the ingredients</p>
           <br>
           <hr>
           <br>
           <h3>Ingrediants Needed:</h3>
           <hr>
+          <center><h3>Item id | Item Amount | Units of measurement | Ingredient Name</h3></center>
           <select id="Ingrediants" size="3">
             {% for item in drugIngrediants %}
             

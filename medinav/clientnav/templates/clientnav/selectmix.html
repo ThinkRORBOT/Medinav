@@ -19,8 +19,10 @@
 </style>
 </head>
 <body>
-  <center> <h1> MedNav </h1> </center>
-  <a href="/clientnav/help">help</a>
+  <center> <h1> MedNav Drug Selection Page</h1> </center>
+  <a style="display: flex; justify-content: flex-end; margin-right:5%;
+" href="/clientnav/help">Help</a>
+  <center><h3>Please select the drug to be mixed</h3></center>
     <select name="Drugs" size="3" id="selectdrug">
       {% for item in mixedDrugs %}
       <option>{{ item.d_id }} | {{ item.d_name }}</option>
