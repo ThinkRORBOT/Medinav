@@ -36,13 +36,16 @@ button {
         margin: 10px 5px;
     }
 
+.spacer {
+    flex: 1;
+}
 
  .container {
         padding: 25px;
         background-color: lightblue;
     }
   footer{
+    position: absolute;
     width: 100%;
     bottom: 0;
-    position: absolute;
   } 

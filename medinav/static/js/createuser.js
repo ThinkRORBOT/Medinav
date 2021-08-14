@@ -20,7 +20,7 @@ window.onload = function () {
                 console.log(data);
                 if (data['status'] == 200) {
                     
-                    window.alert("User create successfully");
+                    window.alert("User created successfully");
                     window.location.href = "/clientnav"
                 }
                 else if (data['status'] == 401) {

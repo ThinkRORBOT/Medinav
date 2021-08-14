@@ -11,25 +11,32 @@
 </head>
 <body>
     <center> <h1> Medinav Help </h1> </center>
-        <div class="container">
+    <div class="container">
+      
+          <center>
           <h2>About</h2>
           <p>
             Medinav is a piece of software that details how to mix medicines for the end client.
           </p>
           <br>
           <h2>Work flow</h2>
+          
           <ol>
-            <li>Select medicine to mix from main window</li>
-            <li>View medicine ingrediants and press confirm</li>
-            <li>Follow LEDs to collect ingrediants</li>
-            <li>Follow instructions to mix</li>
+            <li>Login from the main page using your username and password details. Create a new user if a new account is needed and press the blue forget password text to reset the password. You will be taken to a page where you can enter in the new details.</li>
+            <br>
+            <img src="{% static 'media/login_h.png' %}" width="50%">
+            <li>Select medicine to mix from drug select window by pressing the ingredient and the press the select button. This will take you to a new page where you can see the ingredients used.</li>
+            <br>
+            <img src="{% static 'media/drugselect_h.png' %}" width="50%">
+            <li>The page contains a heading of the current drug being mixed, and it shows you the drugid, the amount, the units as well as the drug name. Select a ingredient that you want to grab and press the Select/Return button. A light on the ingredient will then light up for you to locate and collect. Press the Collected button once the ingredient has been colelcted. Measure out the ingredients needed as normal and press the Select/Return button to return the ingredient to the shelf. Press the back button to select another drug to mix.</li>
+            <br>
+            <img src="{% static 'media/drugmix_h.png' %}" width="50%">
           </ol>
-
+          </center>
             <a href="/clientnav/selectmix"><button type="button" class="back_btn"> Back </button></a>
         </div>
 </body>
-
+<div class="spacer"></div>
 <footer>
-  Pharma Mapping
 </footer>
 </html>
